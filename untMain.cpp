@@ -18,7 +18,7 @@ __fastcall TfrmMain::TfrmMain(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::btnMsgsClick(TObject *Sender)
 {
-	ShowMessage(L"Show Message works...");
+	/*ShowMessage(L"Show Message works...");
 
 	Application->MessageBox(L"Message Box works too.", L"with a Title",
 		MB_OKCANCEL|MB_ICONASTERISK);
@@ -27,7 +27,31 @@ void __fastcall TfrmMain::btnMsgsClick(TObject *Sender)
 
 	UnicodeString errorText = "This is a sample message for an error";
 	MessageDlg(errorText, mtError, mbAbortRetryIgnore, 0);
+	*/
 
+	TForm* Dlg = CreateMessageDialog("Purge Warp Core?", mtConfirmation,
+		TMsgDlgButtons() << mbYes << mbNo);
+	TButton* yb = dynamic_cast<TButton *>(Dlg->FindComponent("Yes"));
+	if (yb)
+		yb->Caption = "Affirmative";
+	TButton* nb = dynamic_cast<TButton *>(Dlg->FindComponent("No"));
+	if (nb)
+		nb->Caption = "Negative";
+
+	Dlg->Caption = "You are simply the best.";
+	int Rslt = Dlg->ShowModal();
+	switch (Rslt) {
+		case mrYes: {
+			ShowMessage("Yep");
+			break ;	// do "Yes" stuff
+		}
+		case mrNo: {
+			ShowMessage("Nope!");
+			break;	// do "No" stuff
+		}
+	}
+
+	Dlg->Free();
 }
 //---------------------------------------------------------------------------
 void __fastcall TfrmMain::btnProject1Click(TObject *Sender)
