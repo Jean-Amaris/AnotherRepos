@@ -28,3 +28,30 @@ void __fastcall TfrmMain::btnMsgsClick(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
+void __fastcall TfrmMain::btnProject1Click(TObject *Sender)
+{
+	String str = edtAny->Text.Trim();
+	if (str.Length() > 0) {
+		btnMsgs->Caption = str;	
+	}else {
+		edtAny->Text = "There is nothing here";
+	}
+
+	for(int i=0; i < str.Length(); i++) {
+		Edit1->Text += i;
+		memAny->Text += IntToStr(i) +  "\r\n";
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmMain::btnClearClick(TObject *Sender)
+{
+	edtAny->Text = "";
+	memAny->Lines->Clear();
+	Edit1->Text = "";	
+}
+//---------------------------------------------------------------------------
+void __fastcall TfrmMain::btnCloseClick(TObject *Sender)
+{
+	Close();	
+}
+//---------------------------------------------------------------------------
