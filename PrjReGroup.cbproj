@@ -119,6 +119,10 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="clsMyClass.cpp">
+            <DependentOn>clsMyClass.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
         <CppCompile Include="PrjReGroup.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>

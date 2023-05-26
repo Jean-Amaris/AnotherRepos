@@ -12,7 +12,7 @@ class TfrmMain : public TForm
 {
 __published:	// IDE-managed Components
 	TButton *btnMsgs;
-	TButton *Button2;
+	TButton *btnProject1;
 	TButton *Button3;
 	TButton *Button4;
 	TButton *Button5;
@@ -21,7 +21,15 @@ __published:	// IDE-managed Components
 	TButton *Button8;
 	TButton *Button9;
 	TButton *Button10;
+	TEdit *edtAny;
+	TMemo *memAny;
+	TEdit *Edit1;
+	TButton *btnClear;
+	TButton *btnClose;
 	void __fastcall btnMsgsClick(TObject *Sender);
+	void __fastcall btnProject1Click(TObject *Sender);
+	void __fastcall btnClearClick(TObject *Sender);
+	void __fastcall btnCloseClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TfrmMain(TComponent* Owner);
