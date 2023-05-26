@@ -4,6 +4,8 @@
 #pragma hdrstop
 
 #include "untMain.h"
+#include "clsMyClass.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -55,3 +57,34 @@ void __fastcall TfrmMain::btnCloseClick(TObject *Sender)
 	Close();	
 }
 //---------------------------------------------------------------------------
+void __fastcall TfrmMain::btnClsManipClick(TObject *Sender)
+{
+	Vehicle vh;
+	String retVal = vh.honk();
+	memAny->Lines->Append(retVal);
+
+	Vehicle vh2("Toyota");
+    retVal = vh2.honk();
+	memAny->Lines->Append(retVal);
+
+	// Create an object of Car
+	Car carObj1;
+	carObj1.brand = "BMW";
+	carObj1.model = "X5";
+	carObj1.year = 1999;
+	carObj1.maxspeed(200);
+
+	retVal = carObj1.honk();
+	memAny->Lines->Append(retVal);
+	memAny->Lines->Append(L"And max speed: " + IntToStr(carObj1.maxspeed()) );
+
+	// Create another object of Car
+	Car carObj2("Ford", L"Mustang", 1969);
+	carObj2.maxspeed(150);
+
+	retVal = carObj2.honk();
+	memAny->Lines->Append(retVal);
+	memAny->Lines->Append(L"And max speed: " + IntToStr(carObj2.maxspeed()) );
+}
+//---------------------------------------------------------------------------
+

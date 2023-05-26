@@ -8,33 +8,44 @@
 #include <vcl.h>
 
 // Base class
-class Vehicle {
+class Vehicle
+{
+private:
+	String _brand;
+
 public:
-	String brand = "Ford";
-	void honk() {
-		//Application -> MessageBox("Tuut, tuut! \n");
-	}
+	Vehicle();
+	Vehicle(String sBrand);
+
+	__property String brand = { read = _brand, write = _brand };
+
+	String __fastcall honk();
 };
 
+//---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+
 // Derived class
-class Car : public Vehicle {
-public:
-	Car() { }
-	Car(String sbrand, String sModel, int iYear);
-
-	String model;
-	int year = 0;
-
-	int speed(int maxSpeed);
-
-	// Setter
-	void setSalary(int s) {		iSalary = s;		}
-	// Getter
-	int getSalary() {			return iSalary;		}
-
+class Car : public Vehicle
+{
 private:	// all members are private by default...
-	int iSalary = 0;
+	String _model;
+	int _year;
+	int _maxspeed = 0;
 
 protected:
 
+public:
+	Car();
+	Car(String sbrand, String sModel, int iYear);
+
+	__property String model = { read = _model, write = _model };
+	__property String year = { read = _year, write = _year };
+
+	String __fastcall honk();
+
+	// Setter
+	void maxspeed(int s) {		_maxspeed = s;		}
+	// Getter
+	int maxspeed() {			return _maxspeed;		}
 };

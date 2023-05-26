@@ -30,13 +30,14 @@ object frmMain: TfrmMain
     TabOrder = 1
     OnClick = btnProject1Click
   end
-  object Button3: TButton
+  object btnClsManip: TButton
     Left = 8
     Top = 70
     Width = 75
     Height = 25
-    Caption = 'Button3'
+    Caption = 'Cls Manip'
     TabOrder = 2
+    OnClick = btnClsManipClick
   end
   object Button4: TButton
     Left = 8
