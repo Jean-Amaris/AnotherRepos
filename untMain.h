@@ -27,6 +27,7 @@ __published:	// IDE-managed Components
 	TButton *CleanMemo;
 	TButton *btnOOP;
 	TButton *btnFileViewer;
+	TButton *btnDataBase;
 	void __fastcall btnCloseClick(TObject *Sender);
 	void __fastcall btnOneClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
@@ -34,6 +35,7 @@ __published:	// IDE-managed Components
 	void __fastcall CleanMemoClick(TObject *Sender);
 	void __fastcall btnOOPClick(TObject *Sender);
 	void __fastcall btnFileViewerClick(TObject *Sender);
+	void __fastcall btnDataBaseClick(TObject *Sender);
 
 
 private:	// User declarations

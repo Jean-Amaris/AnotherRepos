@@ -215,6 +215,19 @@
             <DependentOn>uFrame1.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
+        <CppCompile Include="untDataBase.cpp">
+            <Form>frmDataBase</Form>
+            <FormType>fmx</FormType>
+            <DependentOn>untDataBase.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="untDataModule.cpp">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+            <DependentOn>untDataModule.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
         <CppCompile Include="untMain.cpp">
             <Form>frmMain</Form>
             <FormType>fmx</FormType>
@@ -224,6 +237,8 @@
         <FormResources Include="uFrame1.fmx"/>
         <FormResources Include="untMain.fmx"/>
         <FormResources Include="FVForm.fmx"/>
+        <FormResources Include="untDataModule.dfm"/>
+        <FormResources Include="untDataBase.fmx"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

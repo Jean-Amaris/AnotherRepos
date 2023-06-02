@@ -360,3 +360,10 @@ void __fastcall TfrmMain::btnFileViewerClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TfrmMain::btnDataBaseClick(TObject *Sender)
+{
+    frmDataBase->ShowModal();
+}
+//---------------------------------------------------------------------------
+
